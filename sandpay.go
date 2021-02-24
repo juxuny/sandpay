@@ -1,11 +1,11 @@
 package sandpay
 
 import (
+	"github.com/juxuny/sandpay/pay"
+	"github.com/juxuny/sandpay/pay/params"
+	"github.com/juxuny/sandpay/pay/reponse"
+	"github.com/juxuny/sandpay/pay/request"
 	"net/url"
-	"sandpay/pay"
-	"sandpay/pay/params"
-	"sandpay/pay/reponse"
-	"sandpay/pay/request"
 	"strings"
 	"time"
 )
@@ -15,11 +15,10 @@ var Client SandPay
 func init() {
 	//TODO 改为配置文件
 	Client.Config = pay.Config{
-		MerId: "100211701160001",
+		MerId:           "100211701160001",
 		PrivatePath:     "/home/keyed/Downloads/100211701160001/server.key",  //私钥文件
 		CertPath:        "/home/keyed/Downloads/100211701160001/server.cert", //公钥文件
-		EncryptCertPath: "/home/keyed/Downloads/100211701160001/sand.cer", //导出的公钥文件
-
+		EncryptCertPath: "/home/keyed/Downloads/100211701160001/sand.cer",    //导出的公钥文件
 
 		ApiHost:   "https://cashier.sandpay.com.cn/gateway/api",
 		NotifyUrl: "https://127.0.0.1:8080/pay/api/",

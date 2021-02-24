@@ -1,11 +1,11 @@
 package sandpay
 
 import (
+	"github.com/juxuny/sandpay/agent"
+	"github.com/juxuny/sandpay/agent/params"
+	"github.com/juxuny/sandpay/agent/reponse"
+	"github.com/juxuny/sandpay/agent/request"
 	"log"
-	"sandpay/agent"
-	"sandpay/agent/params"
-	"sandpay/agent/reponse"
-	"sandpay/agent/request"
 	"time"
 )
 
@@ -14,10 +14,10 @@ var AgentPayClient PaymentAgent
 func init() {
 	//TODO 改为配置文件
 	AgentPayClient.Config = agent.Config{
-		MerId: "100211701160001",
+		MerId:           "100211701160001",
 		PrivatePath:     "/home/keyed/Downloads/100211701160001/server.key",  //私钥文件
 		CertPath:        "/home/keyed/Downloads/100211701160001/server.cert", //公钥文件
-		EncryptCertPath: "/home/keyed/Downloads/100211701160001/sand.cer", //导出的公钥文件
+		EncryptCertPath: "/home/keyed/Downloads/100211701160001/sand.cer",    //导出的公钥文件
 
 		ApiHost: "https://caspay.sandpay.com.cn/agent-main/openapi",
 
